@@ -1,3 +1,5 @@
+
+
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
         <h1>${municipality.name!''} &nbsp; <small>[${municipality.zipcode!''}]</small></h1>
@@ -6,47 +8,48 @@
     <div class="col-md-8 col-md-offset-2">
         <h3>IRIS  : ${iris.data[0]} <small> code : ${iris.codeIris} </small>
         <a class="btn btn-primary pull-right" href=" https://www.geoportail.gouv.fr/carte?c=${iris.data[3]},${iris.data[4]}&z=16&l0=ORTHOIMAGERY.ORTHOPHOTOS::GEOPORTAIL:OGC:WMTS(0.41796875)&l1=STATISTICALUNITS.IRISGE::GEOPORTAIL:OGC:WMS(1)&permalink=yes" >
-            <span class="fa fa-map-marker"></span> &nbsp; Accès à la carte
+            <span class="fa fa-map-marker"></span> &nbsp; #i18n{energissimo.municipality.button.map}
         </a>
         </h3>
     </div>
+    
+    
     <div class="col-md-4">
         <div class="panel color-data">
-        <h2><span class="fa fa-database"></span> &nbsp; Les données</h2>
+        <h2><span class="fa fa-database"></span> &nbsp; #i18n{energissimo.municipality.panel.data}</h2>
+        <p>#i18n{energissimo.municipality.panel.data.subtitle}</p>
         <ul>
-            <li>Conso. électrique résidentielle : ${iris.data[6]} MWh</li> 
-            <li>Conso. électrique agricole : ${iris.data[9]} MWh</li> 
-            <li>Conso. électrique industrielle : ${iris.data[11]} MWh</li> 
-            <li>Conso. électrique tertiaire : ${iris.data[13]} MWh</li> 
-            <li>Conso. gaz résidentielle : ${iris.data[40]} MWh</li> 
-            <li>Conso. gaz agricole : ${iris.data[43]} MWh</li> 
-            <li>Conso. gaz industrielle : ${iris.data[42]} MWh</li> 
-            <li>Conso. gaz tertiaire : ${iris.data[41]} MWh</li> 
-            <li>Production PV : ${iris.data[20]} MWh</li> 
-            <li>Production éolien : ${iris.data[26]} MWh</li> 
-            <li>Production électrique biomasse : ${iris.data[28]} MWh</li>
-            <li>Population :  ${iris.data[31]} habitants</li>
-            <li>Revenu médian : ${iris.data[33]} € </li>
-            <li>Ensoleillement :  ${iris.data[34]} heures/an</li>
-            <li>Vent moyen : 25 km/h</li>
+            <li>#i18n{energissimo.municipality.consumption.electricity.residential} : <b>${iris.data[6]?keep_before(".")}</b></li> 
+            <li>#i18n{energissimo.municipality.consumption.electricity.agricultural} : <b>${iris.data[9]?keep_before(".")}</b></li> 
+            <li>#i18n{energissimo.municipality.consumption.electricity.industrial} : <b>${iris.data[11]?keep_before(".")}</b></li> 
+            <li>#i18n{energissimo.municipality.consumption.electricity.tertiary} : <b>${iris.data[13]?keep_before(".")}</b></li> 
+            <li>#i18n{energissimo.municipality.consumption.gas.residential} : <b>${iris.data[40]?keep_before(".")}</b></li> 
+            <li>#i18n{energissimo.municipality.consumption.gas.agricultural} : <b>${iris.data[43]?keep_before(".")}</b></li> 
+            <li>#i18n{energissimo.municipality.consumption.gas.industrial} : <b>${iris.data[42]?keep_before(".")}</b></li> 
+            <li>#i18n{energissimo.municipality.consumption.gas.tertiary} : <b>${iris.data[41]?keep_before(".")}</b></li> 
+            <li>#i18n{energissimo.municipality.production.photovoltaic} : <b>${iris.data[20]?keep_before(".")}</b></li> 
+            <li>#i18n{energissimo.municipality.production.wind} : <b>${iris.data[26]?keep_before(".")}</b></li> 
+            <li>#i18n{energissimo.municipality.production.biomass} : <b>${iris.data[28]?keep_before(".")}</b></li>
+            <li>#i18n{energissimo.municipality.population} :  <b>${iris.data[31]?keep_before(".")}</b></li>
+            <li>#i18n{energissimo.municipality.income} : <b>${iris.data[33]}</b></li>
+            <li>#i18n{energissimo.municipality.sunshine.duration} :  <b>${iris.data[34]}</b></li>
+            <li>#i18n{energissimo.municipality.wind.speed} : <b>25</b></li>
         </ul>
         </div>
     </div>
     <div class="col-md-4 ">
         <div class="panel color-recommendation">
-        <h2><span class="fa fa-diamond"></span> Recommendations</h2>
+        <h2><span class="fa fa-diamond"></span> #i18n{energissimo.municipality.panel.recommendations}</h2>
+        <p>#i18n{energissimo.municipality.panel.recommendations.subtitle}</p>
         <p>
-            Cette commune présente des similarités avec d'autres. Voici la recommendation proposée à ce groupe de collectivités :
+            <em>#i18n{energissimo.municipality.panel.recommendations.text}</em>
         </p>
-        <ul>
-            <li>Développer le photovoltaïque pour profiter de l'ensoleillement. </li>
-            <li>Augmenter la production de bio gaz</li>
-        </ul>
         </div>
     </div>
     <div class="col-md-4">
         <div class="panel color-similar">
-        <h2><span class="fa fa-handshake-o"></span> &nbsp;Communes similaires</h2>
+        <h2><span class="fa fa-handshake-o"></span> &nbsp;#i18n{energissimo.municipality.panel.similar}</h2>
+        <p>#i18n{energissimo.municipality.panel.similar.subtitle}</p>
         <ul>    
             <#list iris.similars as similar>
             <li><a href="jsp/site/Portal.jsp?page=energissimo&view=municipality&id=${similar.zipcode}">${similar.name}</a></li>

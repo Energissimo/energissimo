@@ -6,16 +6,16 @@
                     <div class="row">
                         <div class="row col-md-6 col-md-offset-3">
                             <h1>Energissimo</h1>
-                            <p>Compilation et classification des données energétiques à l'usage des communes.</p>
-
+                            <h3>#i18n{energissimo.energissimo.title}</h3>
+                            #i18n{energissimo.energissimo.text}
                             <div class="row">
                                 <div class="col-md-03">
                                         <form action="jsp/site/Portal.jsp">
                                             <input type="hidden" name="page" value="energissimo" />
                                             <input type="hidden" name="action" value="search" />
-                                            <input class="input-lg search" name="query" type="text" placeholder="Nom de la commune, code INSEE ...">
+                                            <input class="input-lg search" name="query" type="text" placeholder="#i18n{energissimo.energissimo.search.placeholder}">
                                             <@messages errors=errors />
-                                            <button class="btn btn-danger btn-lg" type="submit">Rechercher</button>
+                                            <button class="btn btn-danger btn-lg" type="submit">#i18n{portal.util.labelSearch}</button>
                                         </form>
                                 </div>
                             </div>
