@@ -19,3 +19,9 @@ REPLACE INTO core_datastore VALUES ('core.plugins.status.html.installed' ,'truel
 REPLACE INTO core_datastore VALUES ('core.plugins.status.html.pool' ,'portal' );
 REPLACE INTO core_datastore VALUES ('core.plugins.status.energissimo.installed' ,'true' );
 REPLACE INTO core_datastore VALUES ('core.plugins.status.energissimo.pool' ,'portal' );
+
+UPDATE core_page SET name = 'About' WHERE id_page = 2;
+UPDATE core_portlet SET name = 'About this site' WHERE id_portlet = 4;
+
+UPDATE html_portlet SET html = '<p>&nbsp;</p> \n<p>This site has been made in 2 days during the Data Energy Hackathon in June 2017.</p> \n<p>The objective of the site is to present all the energy data of French municipalities by grouping them by clusters (built from machine learning algorithms). The municipalities can then exchange their experience and strategy in terms of energy equipment.&nbsp;</p> \n<p>The project team was composed by:</p> \n<ul> \n <li>1 Energy expert: Guillaume</li> \n <li>2 Machine Learning engineers (Python): Pierre-Cyril and Julien</li> \n <li>1 Data scientist: Benoit</li> \n <li>2 Web developers (Java Lutece): Jon and Pierre</li> \n</ul> \n<p>&nbsp;All the source code is available on GitHub at <a title=\"Link to GitHub\" href=\"http://github.com/energissimo\" target=\"_blank\">http://github.com/energissimo</a></p>' WHERE id_portlet = 4;
+
